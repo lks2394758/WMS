@@ -1,0 +1,48 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "WMS API",
+    "version": "v1",
+    "description": "Skeleton contract (milestone M1). Replaced by the document generated at /openapi/v1.json in M2 and compared in CI."
+  },
+  "servers": [
+    { "url": "https://wms-api.company.intra" }
+  ],
+  "paths": {
+    "/health/live": {
+      "get": {
+        "summary": "Process liveness (no database check)",
+        "responses": {
+          "200": { "description": "Healthy", "content": { "text/plain": { "schema": { "type": "string" } } } }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "Bearer": { "type": "http", "scheme": "bearer", "bearerFormat": "JWT" }
+    },
+    "schemas": {
+      "WmsProblemDetails": {
+        "type": "object",
+        "required": ["type", "title", "status", "code", "traceId"],
+        "properties": {
+          "type": { "type": "string" },
+          "title": { "type": "string" },
+          "status": { "type": "integer" },
+          "code": {
+            "type": "string",
+            "enum": [
+              "VALIDATION_FAILED", "UNAUTHENTICATED", "FORBIDDEN", "NOT_FOUND", "PRODUCT_NOT_FOUND",
+              "LOCATION_NOT_FOUND", "PRODUCT_INACTIVE", "LOCATION_INACTIVE", "BARCODE_AMBIGUOUS",
+              "INSUFFICIENT_STOCK", "CONCURRENCY_CONFLICT", "IDEMPOTENCY_CONFLICT", "INTERNAL_ERROR"
+            ]
+          },
+          "traceId": { "type": "string" },
+          "detail": { "type": "string" },
+          "errors": { "type": "object", "additionalProperties": { "type": "array", "items": { "type": "string" } } }
+        }
+      }
+    }
+  }
+}

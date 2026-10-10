@@ -1,0 +1,10 @@
+{
+  "id": "2a3b4c5d-6e7f-4a8b-9c0d-1e2f3a4b5c06",
+  "warehouseId": "3f6c1f2e-9a4b-4c1d-8e2f-1a2b3c4d5e01",
+  "productId": "5d2c3b4a-1e2f-4a3b-8c4d-5e6f7a8b9c04",
+  "type": "lowStock",
+  "status": "opened",
+  "availableQuantity": 15,
+  "capacity": 100,
+  "openedAt": "2026-10-10T18:00:00Z"
+}

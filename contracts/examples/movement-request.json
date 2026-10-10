@@ -1,0 +1,7 @@
+{
+  "fromLocationId": "7b1e2d3c-4a5b-4c6d-9e8f-0a1b2c3d4e02",
+  "toLocationId": "7b1e2d3c-4a5b-4c6d-9e8f-0a1b2c3d4e03",
+  "lines": [
+    { "productId": "5d2c3b4a-1e2f-4a3b-8c4d-5e6f7a8b9c04", "quantity": 6 }
+  ]
+}

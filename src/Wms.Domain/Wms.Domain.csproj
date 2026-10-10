@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Wms.Domain references no other project (guide §2.3). -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="Wms.Domain.Tests" />
+  </ItemGroup>
+
+</Project>

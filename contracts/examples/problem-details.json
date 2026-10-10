@@ -1,0 +1,8 @@
+{
+  "type": "https://wms-api.company.intra/problems/insufficient-stock",
+  "title": "Insufficient available stock",
+  "status": 409,
+  "code": "INSUFFICIENT_STOCK",
+  "traceId": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01",
+  "detail": "Location A-01-01 has 2 available units; 3 cannot be removed."
+}
