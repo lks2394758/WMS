@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "id": "6",
+      "number": "CT-000006",
+      "binId": "35",
+      "binCode": "A-R1-03-01",
+      "productName": "手持扫描枪",
+      "status": "inProgress",
+      "creatorName": "Morgan Chen",
+      "creatorRole": "warehouseSupervisor",
+      "startedAt": "2026-10-19T19:00:00Z",
+      "round": 2,
+      "version": 5,
+      "hasUnresolvedInvestigation": true,
+      "latestResultId": "9"
+    },
+    {
+      "id": "4",
+      "number": "CT-000004",
+      "binId": "32",
+      "binCode": "A-R1-02-04",
+      "productName": "铜线 2.5mm",
+      "status": "completed",
+      "creatorName": "Morgan Chen",
+      "creatorRole": "warehouseSupervisor",
+      "startedAt": "2026-10-19T15:00:00Z",
+      "round": 1,
+      "version": 3,
+      "hasUnresolvedInvestigation": false,
+      "completedAt": "2026-10-19T15:20:00Z",
+      "latestResultId": "7"
+    }
+  ]
+}

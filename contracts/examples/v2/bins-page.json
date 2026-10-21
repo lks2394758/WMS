@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "id": "31",
+      "code": "A-R1-02-03",
+      "zone": "A",
+      "rack": "R1",
+      "level": "02",
+      "cell": "03",
+      "quantity": "150",
+      "capacityStatus": "normal",
+      "effectiveLowThreshold": "20",
+      "effectiveHighThreshold": "85.5",
+      "hasUnresolvedInvestigation": false,
+      "historicalCodes": [],
+      "version": 9,
+      "productId": "12",
+      "productName": "铜线 2.5mm",
+      "sku": "SKU-000012",
+      "unitName": "米",
+      "decimalPlaces": 2,
+      "serialTracking": false,
+      "capacity": "200",
+      "occupancyPercent": "75",
+      "highThreshold": "85.5"
+    },
+    {
+      "id": "40",
+      "code": "B-R2-01-01",
+      "zone": "B",
+      "rack": "R2",
+      "level": "01",
+      "cell": "01",
+      "quantity": "0",
+      "capacityStatus": "notConfigured",
+      "effectiveLowThreshold": "20",
+      "effectiveHighThreshold": "80",
+      "hasUnresolvedInvestigation": false,
+      "historicalCodes": ["B-R9-01-01"],
+      "version": 2
+    }
+  ],
+  "nextCursor": "eyJjb2RlIjoiQi1SMi0wMS0wMSJ9"
+}

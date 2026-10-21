@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "id": "231",
+      "occurredAt": "2026-10-19T20:16:00Z",
+      "type": "productUpdate",
+      "description": "修改商品 SKU-000012 名称和分类",
+      "success": true,
+      "subjects": [
+        { "type": "product", "id": "12", "label": "SKU-000012" }
+      ],
+      "actorId": "7",
+      "actorName": "Morgan Chen",
+      "actorRole": "warehouseSupervisor",
+      "changes": [
+        { "field": "name", "before": "铜线 2.5mm", "after": "铜线 2.5mm²" },
+        { "field": "categoryIds", "before": "", "after": "2" },
+        { "field": "image", "before": "image/png, 68 bytes" }
+      ]
+    },
+    {
+      "id": "229",
+      "occurredAt": "2026-10-19T20:10:00Z",
+      "type": "shipment",
+      "description": "出库 2 行失败",
+      "success": false,
+      "subjects": [
+        { "type": "product", "id": "12", "label": "SKU-000012" },
+        { "type": "bin", "id": "31", "label": "A-R1-02-03" },
+        { "type": "bin", "id": "35", "label": "A-R1-03-01" }
+      ],
+      "actorId": "9",
+      "actorName": "Jordan Lee",
+      "actorRole": "shippingClerk",
+      "failureCode": "INSUFFICIENT_STOCK",
+      "failureReason": "A-R1-02-03 现有 150 米，不能出库 160 米"
+    },
+    {
+      "id": "228",
+      "occurredAt": "2026-10-19T20:05:00Z",
+      "type": "login",
+      "description": "登录失败",
+      "success": false,
+      "subjects": [],
+      "loginName": "jl***",
+      "failureCode": "INVALID_CREDENTIALS",
+      "failureReason": "用户名或密码错误"
+    }
+  ],
+  "nextCursor": "eyJpZCI6MjI4fQ"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "https://wms-api.company.intra/problems/bin-frozen",
+  "title": "Bin is frozen by a count",
+  "status": 409,
+  "code": "BIN_FROZEN",
+  "traceId": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b9-01",
+  "detail": "Bin A-R1-02-03 is frozen by count task CT-000004.",
+  "errors": {
+    "lines[0].toBinId": ["The bin is frozen by a count."]
+  },
+  "subjects": [
+    { "type": "bin", "id": "31", "label": "A-R1-02-03" },
+    { "type": "countTask", "id": "4", "label": "CT-000004" }
+  ]
+}

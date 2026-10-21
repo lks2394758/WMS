@@ -1,0 +1,6 @@
+{
+  "lines": [
+    { "productId": "12", "fromBinId": "31", "toBinId": "32", "quantity": "10" },
+    { "productId": "15", "fromBinId": "35", "toBinId": "40", "capacity": "5", "serialNumbers": ["SN-000103"] }
+  ]
+}

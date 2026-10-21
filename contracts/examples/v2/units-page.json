@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "id": "1", "name": "件", "isSystem": true, "productCount": 4, "version": 1 },
+    { "id": "3", "name": "米", "isSystem": false, "productCount": 1, "version": 2 }
+  ],
+  "nextCursor": "eyJpZCI6M30"
+}

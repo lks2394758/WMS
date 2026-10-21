@@ -1,0 +1,35 @@
+{
+  "id": "86",
+  "serialNumber": "SN-000102",
+  "productId": "15",
+  "productName": "手持扫描枪",
+  "sku": "SCN-200",
+  "inStock": true,
+  "historicalSerialNumbers": ["SN-00102"],
+  "history": [
+    {
+      "transactionId": "41",
+      "transactionNumber": "TX-000041",
+      "type": "receipt",
+      "occurredAt": "2026-10-19T17:20:00Z",
+      "actorName": "Sam Park",
+      "actorRole": "receivingClerk",
+      "serialNumber": "SN-00102",
+      "toBinCode": "A-R1-03-01"
+    }
+  ],
+  "corrections": [
+    {
+      "activityLogId": "212",
+      "previousSerialNumber": "SN-00102",
+      "newSerialNumber": "SN-000102",
+      "reason": "录入时漏了一位 0",
+      "actorName": "Morgan Chen",
+      "actorRole": "warehouseSupervisor",
+      "occurredAt": "2026-10-19T18:00:00Z"
+    }
+  ],
+  "version": 2,
+  "binId": "35",
+  "binCode": "A-R1-03-01"
+}

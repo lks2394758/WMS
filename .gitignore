@@ -15,9 +15,28 @@ TestResults/
 appsettings.Production.json
 appsettings.*.local.json
 secrets/
+.env
+.env.*
+!.env.example
+!.env.sample
+.claude/
 *.pfx
 *.key
 *.pem
+
+# SQLite demonstration database: runtime file, WAL and shared-memory files (see README.md)
+App_Data/
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite
+*.sqlite3
+*.db3
+
+# Local dependencies and logs
+node_modules/
+*.log
 
 # Backups (guide §1.2)
 backups/

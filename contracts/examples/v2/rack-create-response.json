@@ -1,0 +1,9 @@
+{
+  "zone": "C",
+  "rack": "R1",
+  "levels": 4,
+  "cellsPerLevel": 6,
+  "createdCount": 24,
+  "firstCode": "C-R1-01-01",
+  "lastCode": "C-R1-04-06"
+}

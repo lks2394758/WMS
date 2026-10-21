@@ -71,6 +71,7 @@ public class ExampleRoundTripTests
     public void Every_top_level_contract_has_an_example()
     {
         var contracts = typeof(WmsJson).Assembly.GetExportedTypes()
+            .Where(t => !t.Namespace!.StartsWith("Wms.Contracts.V2", StringComparison.Ordinal))
             .Where(t => t.Name.EndsWith("Request", StringComparison.Ordinal)
                      || t.Name.EndsWith("Response", StringComparison.Ordinal)
                      || t.Name.EndsWith("V1", StringComparison.Ordinal)

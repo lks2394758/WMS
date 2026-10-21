@@ -1,0 +1,13 @@
+{
+  "type": "https://wms-api.company.intra/problems/role-not-assigned",
+  "title": "Role not assigned",
+  "status": 403,
+  "code": "ROLE_NOT_ASSIGNED",
+  "traceId": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b8-01",
+  "errors": {
+    "role": ["The account is not assigned the role 'systemAdministrator'."]
+  },
+  "subjects": [
+    { "type": "user", "id": "7", "label": "mchen" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "57",
+      "number": "TX-000057",
+      "type": "adjustment",
+      "actorId": "7",
+      "actorName": "Morgan Chen",
+      "actorRole": "warehouseSupervisor",
+      "occurredAt": "2026-10-19T20:15:00Z",
+      "lineCount": 1,
+      "reason": "核查确认 SN-000104 已报废",
+      "countResultId": "9"
+    },
+    {
+      "id": "56",
+      "number": "TX-000056",
+      "type": "receipt",
+      "actorId": "8",
+      "actorName": "Sam Park",
+      "actorRole": "receivingClerk",
+      "occurredAt": "2026-10-19T19:40:00Z",
+      "lineCount": 3,
+      "source": "供应商 A"
+    }
+  ],
+  "nextCursor": "eyJpZCI6NTZ9"
+}

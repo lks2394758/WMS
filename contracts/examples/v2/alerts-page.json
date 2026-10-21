@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "id": "21",
+      "type": "countDiscrepancy",
+      "status": "open",
+      "binId": "35",
+      "binCode": "A-R1-03-01",
+      "productId": "15",
+      "productName": "手持扫描枪",
+      "message": "盘点 CT-000006 第 1 轮差异 -1 台，待调查",
+      "createdAt": "2026-10-19T19:12:00Z",
+      "trigger": {
+        "unitName": "台",
+        "decimalPlaces": 0,
+        "sku": "SCN-200",
+        "round": 1,
+        "bookQuantity": "3",
+        "actualQuantity": "2",
+        "difference": "-1"
+      },
+      "countTaskId": "6",
+      "countResultId": "9"
+    },
+    {
+      "id": "18",
+      "type": "lowStock",
+      "status": "resolved",
+      "binId": "32",
+      "binCode": "A-R1-02-04",
+      "productId": "12",
+      "productName": "铜线 2.5mm",
+      "message": "A-R1-02-04 占用 16.38%，低于 20%",
+      "createdAt": "2026-10-19T14:00:00Z",
+      "trigger": {
+        "quantity": "32.75",
+        "capacity": "200",
+        "occupancyPercent": "16.38",
+        "lowThreshold": "20",
+        "highThreshold": "80",
+        "unitName": "米",
+        "decimalPlaces": 2,
+        "sku": "SKU-000012"
+      },
+      "resolvedAt": "2026-10-19T16:00:00Z",
+      "resolutionNote": "库存恢复正常（TX-000049）"
+    }
+  ]
+}

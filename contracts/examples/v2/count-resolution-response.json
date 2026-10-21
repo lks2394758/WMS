@@ -1,0 +1,49 @@
+{
+  "task": {
+    "id": "6",
+    "number": "CT-000006",
+    "binId": "35",
+    "binCode": "A-R1-03-01",
+    "status": "completed",
+    "creatorId": "7",
+    "creatorName": "Morgan Chen",
+    "creatorRole": "warehouseSupervisor",
+    "startedAt": "2026-10-19T19:00:00Z",
+    "round": 1,
+    "version": 5,
+    "hasUnresolvedInvestigation": false,
+    "results": [
+      {
+        "id": "9",
+        "round": 1,
+        "binId": "35",
+        "binCode": "A-R1-03-01",
+        "productId": "15",
+        "productName": "手持扫描枪",
+        "sku": "SCN-200",
+        "barcode": "6901234567892",
+        "unitName": "台",
+        "decimalPlaces": 0,
+        "serialTracking": true,
+        "roundStartedAt": "2026-10-19T19:00:00Z",
+        "bookQuantity": "3",
+        "actualQuantity": "2",
+        "difference": "-1",
+        "submittedById": "7",
+        "submittedByName": "Morgan Chen",
+        "submittedByRole": "warehouseSupervisor",
+        "submittedAt": "2026-10-19T19:10:00Z",
+        "disposition": "resolved",
+        "note": "少一台",
+        "adjustmentTransactionId": "57",
+        "resolutionLogId": "230"
+      }
+    ],
+    "allowedActions": [],
+    "completedAt": "2026-10-19T19:12:00Z",
+    "latestResultId": "9"
+  },
+  "resolvedResultIds": ["9"],
+  "activityLogId": "230",
+  "transactionId": "57"
+}

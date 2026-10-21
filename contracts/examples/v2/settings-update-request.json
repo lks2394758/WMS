@@ -1,0 +1,8 @@
+{
+  "defaultRackLevels": 5,
+  "defaultCellsPerLevel": 8,
+  "lowThreshold": "15.5",
+  "highThreshold": "85",
+  "sessionHours": 10,
+  "version": 5
+}

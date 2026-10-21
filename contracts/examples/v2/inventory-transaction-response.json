@@ -1,0 +1,31 @@
+{
+  "id": "57",
+  "number": "TX-000057",
+  "type": "adjustment",
+  "actorId": "7",
+  "actorName": "Morgan Chen",
+  "actorRole": "warehouseSupervisor",
+  "occurredAt": "2026-10-19T20:15:00Z",
+  "lines": [
+    {
+      "lineNo": 1,
+      "productId": "15",
+      "productName": "手持扫描枪",
+      "sku": "SCN-200",
+      "barcode": "6901234567892",
+      "unitName": "台",
+      "decimalPlaces": 0,
+      "quantity": "-1",
+      "toBinId": "35",
+      "toBinCode": "A-R1-03-01",
+      "toBefore": "3",
+      "toAfter": "2",
+      "items": [
+        { "serializedItemId": "88", "serialNumber": "SN-000104" }
+      ]
+    }
+  ],
+  "reason": "核查确认 SN-000104 已报废",
+  "countTaskId": "6",
+  "countResultId": "9"
+}

@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Wms.Application\Wms.Application.csproj" />
+    <!-- Inspected only: the architecture tests check what the SQLite provider assembly references. -->
+    <ProjectReference Include="..\..\src\Wms.Persistence.Sqlite\Wms.Persistence.Sqlite.csproj" />
   </ItemGroup>
 
 </Project>

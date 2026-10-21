@@ -1,0 +1,11 @@
+{
+  "defaultRackLevels": 4,
+  "defaultCellsPerLevel": 6,
+  "lowThreshold": "20",
+  "highThreshold": "80",
+  "sessionHours": 8,
+  "version": 5,
+  "updatedAt": "2026-10-19T16:10:00Z",
+  "updatedById": "1",
+  "updatedByName": "System Administrator"
+}

@@ -1,0 +1,6 @@
+{
+  "items": [
+    { "id": "2", "name": "工具", "path": "工具", "productCount": 0, "childCount": 1, "version": 1 },
+    { "id": "5", "name": "电动工具", "path": "工具 / 电动工具", "productCount": 1, "childCount": 0, "version": 1, "parentId": "2" }
+  ]
+}

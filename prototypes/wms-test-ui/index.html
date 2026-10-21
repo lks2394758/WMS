@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WMS 测试工作台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">WMS · Prototype · API v1</p>
+        <h1>仓储测试工作台</h1>
+        <a href="/v2/">打开新版工作台（API v2 联调中） →</a>
+      </div>
+      <div class="topbar-side">
+        <div class="mode" id="api-status" aria-live="polite"><span class="dot"></span><span>正在检查 API 连接…</span></div>
+        <div class="session-box hidden" id="session-box">
+          <span id="session-user"></span>
+          <button class="ghost" id="logout-button" type="button">退出登录</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel login-panel" id="login-view">
+        <div>
+          <p class="eyebrow">登录</p>
+          <h2>使用 WMS 后端账号登录</h2>
+          <p class="muted">登录、读取和库存写入都经本地 UI 服务器的 <code>/api</code> 代理发送到真实 WMS API。令牌只保存在本标签页内存中，刷新页面后需要重新登录。</p>
+          <p class="muted">演示种子用户：<code>admin</code>、<code>supervisor</code>、<code>receiver</code>、<code>shipper</code>。密码是你在本机用 <code>dotnet user-secrets</code> 设置的 <code>DevelopmentSeed:Password</code>，本页面不保存也不显示它。</p>
+        </div>
+        <form id="login-form" class="login-form" novalidate>
+          <label>用户名
+            <input name="username" id="login-username" list="seed-users" autocomplete="username" required />
+            <small class="field-error" data-error-for="username"></small>
+          </label>
+          <datalist id="seed-users">
+            <option value="admin">系统管理员</option>
+            <option value="supervisor">仓库主管</option>
+            <option value="receiver">收货员</option>
+            <option value="shipper">发货员</option>
+          </datalist>
+          <label>密码
+            <input name="password" id="login-password" type="password" autocomplete="current-password" required />
+            <small class="field-error" data-error-for="password"></small>
+          </label>
+          <button type="submit" id="login-button">登录</button>
+          <p class="form-message" id="login-message" role="alert"></p>
+        </form>
+      </section>
+
+      <div id="app-view" class="hidden">
+        <section class="source-banner" aria-label="数据来源">
+          <p><strong>真实后端数据</strong> · 以下内容均读取自 WMS API 已提交的数据（当前为 SQLite 演示库）。本页面不保存库存副本，每次写入后都会重新读取服务器余额。</p>
+          <div class="source-actions">
+            <small id="loaded-at"></small>
+            <button class="secondary" id="reload-button" type="button">重新读取</button>
+          </div>
+        </section>
+
+        <section class="summary" aria-label="库存概览">
+          <article><span>商品</span><strong id="product-count">–</strong></article>
+          <article><span>货位</span><strong id="location-count">–</strong></article>
+          <article><span>库存总件数（当前筛选）</span><strong id="unit-count">–</strong></article>
+          <article><span>本会话成功写入</span><strong id="transaction-count">0</strong></article>
+        </section>
+
+        <section class="panel scanner-panel">
+          <div>
+            <p class="eyebrow">扫码 / 查询</p>
+            <h2>输入条码或 SKU</h2>
+            <p class="muted">条码通过 <code>GET /barcodes/resolve</code> 解析；未匹配条码时按已读取的商品 SKU 查找。</p>
+          </div>
+          <form id="lookup-form" class="lookup-form">
+            <label class="sr-only" for="lookup-value">条码或 SKU</label>
+            <input id="lookup-value" autocomplete="off" placeholder="扫码后会自动填入这里" />
+            <button id="lookup-button">查询</button>
+          </form>
+          <div id="lookup-result" class="lookup-result" aria-live="polite"></div>
+        </section>
+
+        <section class="workspace">
+          <div class="panel inventory-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">库存余额 · GET /inventory/balances</p>
+                <h2>已提交的可用库存</h2>
+              </div>
+              <div class="filters">
+                <label class="sr-only" for="filter-product">按商品筛选</label>
+                <select id="filter-product"></select>
+                <label class="sr-only" for="filter-location">按货位筛选</label>
+                <select id="filter-location"></select>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>商品</th><th>货位</th><th>可用库存</th><th>更新时间</th></tr></thead>
+                <tbody id="inventory-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <aside class="panel catalog-panel">
+            <p class="eyebrow">主数据 · GET /products</p>
+            <h2>商品</h2>
+            <p class="muted small">容量来自商品主数据。v1 API 没有预警接口，本页面不自行计算库存预警。</p>
+            <ul id="product-list" class="plain-list"></ul>
+          </aside>
+        </section>
+
+        <section class="panel operations-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">库存写入 · POST /inventory/*</p><h2>入库、出库、移库、盘点与调整</h2></div>
+            <p class="hint">由服务器校验并提交事务。每次提交使用新的 Idempotency-Key；只有“重试”会复用原键和原请求体。</p>
+          </div>
+          <div class="operation-tabs" role="tablist" aria-label="库存操作类型" id="operation-tabs"></div>
+          <form id="operation-form" class="operation-form" novalidate></form>
+          <div id="pending-banner" class="pending-banner hidden" role="alert"></div>
+          <div id="operation-message" class="form-message" aria-live="polite"></div>
+        </section>
+
+        <section class="panel history-panel">
+          <p class="eyebrow">本会话记录</p>
+          <h2>本标签页成功提交的操作</h2>
+          <p class="muted small">仅保存在当前标签页内存中，退出登录或刷新页面即清空。它不是服务器流水：v1 API 目前没有交易历史查询接口。</p>
+          <ol id="history-list" class="history-list"></ol>
+        </section>
+      </div>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

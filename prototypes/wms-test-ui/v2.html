@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WMS · 仓库工作台</title>
+  <link rel="stylesheet" href="/v2.css"><script type="module" src="/v2-app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#content">跳转到内容</a>
+  <section id="login-view" class="login-layout">
+    <div class="login-intro"><p class="eyebrow">WAREHOUSE MANAGEMENT / V2</p><h1>每一件库存，<br>都有迹可循。</h1><p>商品、库位、实物与操作历史，<br>在同一张工作台里清晰连接。</p><div class="intro-foot">单仓库 · 本地部署 · 真实数据</div></div>
+    <form id="login-form" class="login-card" method="post" action="/api/v2/auth/login"><span class="brand-symbol">W</span><h2>登录仓库工作台</h2><p class="muted">使用管理员分配的账号登录。</p>
+      <label>用户名<input name="username" autocomplete="username" required maxlength="64"></label>
+      <label>密码<input name="password" type="password" autocomplete="current-password" required></label>
+      <button type="submit" class="primary" disabled>登录</button><noscript><p class="error">此界面需要启用 JavaScript 才能登录。</p></noscript><p id="login-error" role="alert" class="error"></p>
+      <p class="muted small">新版 API 尚未就绪时会明确报错，不加载模拟库存。<a href="/">打开旧版测试页</a></p>
+    </form>
+  </section>
+  <div id="workspace" class="workspace" hidden>
+    <aside class="sidebar"><a class="brand" href="#dashboard"><span class="brand-symbol">W</span><span>仓库工作台<small>WAREHOUSE / V2</small></span></a><nav id="navigation" aria-label="主导航"></nav><div class="sidebar-foot">单仓库演示环境<br><a href="/">旧版测试页 ↗</a></div></aside>
+    <div class="main-shell"><header class="topbar"><div><span class="status-dot"></span> 本地仓库 <span class="tag">V2</span></div><div class="account"><span id="account-name"></span><label class="sr-only" for="role-select">当前身份</label><select id="role-select"></select><button type="button" id="logout" class="quiet">退出</button></div></header>
+      <main id="content" tabindex="-1"><div class="page-heading"><div><p class="eyebrow">WAREHOUSE WORKSPACE</p><h1 id="page-title">工作台</h1></div><button type="button" id="refresh" class="secondary">刷新数据</button></div>
+        <div id="notice" role="status" aria-live="polite" hidden></div><section id="pending" class="pending" hidden></section><div id="page" aria-busy="false"></div>
+      </main><footer>库存以服务端已提交记录为准。不同单位不合计，历史记录不覆盖。</footer>
+    </div>
+  </div>
+  <dialog id="editor"><form id="editor-form"><div class="dialog-heading"><h2 id="editor-title"></h2><button type="button" data-close aria-label="关闭">×</button></div><p id="editor-hint" class="muted"></p><div id="editor-fields" class="form-grid"></div><p id="editor-error" role="alert" class="error"></p><div class="dialog-actions"><button type="button" data-close class="secondary">取消</button><button type="submit" class="primary">确认提交</button></div></form></dialog>
+</body>
+</html>

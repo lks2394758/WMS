@@ -10,6 +10,7 @@ internal static class ProblemCodeMapper
         StatusCodes.Status401Unauthorized => ProblemCodes.Unauthenticated,
         StatusCodes.Status403Forbidden => ProblemCodes.Forbidden,
         StatusCodes.Status404NotFound => ProblemCodes.NotFound,
+        StatusCodes.Status429TooManyRequests => ProblemCodes.RateLimited,
         >= StatusCodes.Status500InternalServerError => ProblemCodes.InternalError,
         _ => ProblemCodes.ValidationFailed,
     };

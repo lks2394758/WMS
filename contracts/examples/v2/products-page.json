@@ -1,0 +1,33 @@
+{
+  "items": [
+    {
+      "id": "12",
+      "name": "铜线 2.5mm",
+      "sku": "SKU-000012",
+      "barcode": "BC-000012",
+      "unitId": "3",
+      "unitName": "米",
+      "decimalPlaces": 2,
+      "serialTracking": false,
+      "categoryIds": [],
+      "totalQuantity": "182.75",
+      "hasImage": true,
+      "version": 4
+    },
+    {
+      "id": "15",
+      "name": "手持扫描枪",
+      "sku": "SCN-200",
+      "barcode": "6901234567892",
+      "unitId": "4",
+      "unitName": "台",
+      "decimalPlaces": 0,
+      "serialTracking": true,
+      "categoryIds": ["5"],
+      "totalQuantity": "3",
+      "hasImage": false,
+      "version": 1
+    }
+  ],
+  "nextCursor": "eyJpZCI6MTV9"
+}

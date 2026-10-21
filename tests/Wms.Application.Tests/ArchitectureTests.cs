@@ -18,8 +18,9 @@ public class ArchitectureTests
         { "src/Wms.Contracts/Wms.Contracts.csproj", [] },
         { "src/Wms.Persistence.Abstractions/Wms.Persistence.Abstractions.csproj", ["Wms.Domain"] },
         { "src/Wms.Application/Wms.Application.csproj", ["Wms.Domain", "Wms.Contracts", "Wms.Persistence.Abstractions"] },
-        { "src/Wms.Api/Wms.Api.csproj", ["Wms.Application", "Wms.Contracts", "Wms.Persistence.Provider"] },
-        { "src/Wms.Worker/Wms.Worker.csproj", ["Wms.Application", "Wms.Contracts", "Wms.Persistence.Provider"] },
+        { "src/Wms.Persistence.Sqlite/Wms.Persistence.Sqlite.csproj", ["Wms.Domain", "Wms.Persistence.Abstractions"] },
+        { "src/Wms.Api/Wms.Api.csproj", ["Wms.Application", "Wms.Contracts", "Wms.Persistence.Sqlite", "Wms.Persistence.Provider"] },
+        { "src/Wms.Worker/Wms.Worker.csproj", ["Wms.Application", "Wms.Contracts", "Wms.Persistence.Sqlite", "Wms.Persistence.Provider"] },
     };
 
     [Theory]
@@ -57,7 +58,8 @@ public class ArchitectureTests
 
         Assert.DoesNotContain("Wms.Api", references);
         Assert.DoesNotContain("Wms.Worker", references);
-        Assert.DoesNotContain(references, n => n.StartsWith("Wms.Persistence.Provider", StringComparison.Ordinal));
+        Assert.DoesNotContain(references, n => n.StartsWith("Wms.Persistence.", StringComparison.Ordinal)
+            && n != "Wms.Persistence.Abstractions"); // no provider (Sqlite today, SQL Server/PostgreSQL later)
         Assert.DoesNotContain(references, n => DatabaseDriverPrefixes.Any(p => n.StartsWith(p, StringComparison.Ordinal)));
     }
 
@@ -67,6 +69,16 @@ public class ArchitectureTests
         var references = ReferencedNames(PersistenceAbstractionsAssembly.Reference);
 
         Assert.DoesNotContain(references, n => DatabaseDriverPrefixes.Any(p => n.StartsWith(p, StringComparison.Ordinal)));
+    }
+
+    [Fact]
+    public void Sqlite_provider_references_only_domain_and_persistence_abstractions()
+    {
+        var references = ReferencedNames(typeof(Wms.Persistence.Sqlite.SqlitePersistence).Assembly)
+            .Where(n => n.StartsWith("Wms.", StringComparison.Ordinal))
+            .Order(StringComparer.Ordinal);
+
+        Assert.Equal(["Wms.Domain", "Wms.Persistence.Abstractions"], references);
     }
 
     private static string[] ReferencedNames(Assembly assembly) =>

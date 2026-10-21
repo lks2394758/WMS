@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    SQLite demonstration provider: implements the persistence ports on one local database file. It proves atomic,
+    persistent single-file storage only; it is not evidence for the production database (AGENTS.md rule 4).
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Wms.Domain\Wms.Domain.csproj" />
+    <ProjectReference Include="..\Wms.Persistence.Abstractions\Wms.Persistence.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <!-- Build-time only: lets the local dotnet-ef tool (.config/dotnet-tools.json) add migrations. Not shipped. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Wms.Persistence.Sqlite.Tests" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

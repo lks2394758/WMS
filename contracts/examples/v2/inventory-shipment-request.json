@@ -1,0 +1,7 @@
+{
+  "lines": [
+    { "productId": "12", "fromBinId": "31", "quantity": "20.5" },
+    { "productId": "15", "fromBinId": "35", "serialNumbers": ["SN-000101", "SN-000102"] }
+  ],
+  "destination": "维修部"
+}

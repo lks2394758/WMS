@@ -1,0 +1,30 @@
+{
+  "lines": [
+    {
+      "productId": "12",
+      "toBinId": "33",
+      "capacity": "200",
+      "lowThreshold": "10",
+      "packagingUnit": "卷",
+      "packagingQuantity": "2",
+      "conversionFactor": "50"
+    },
+    {
+      "toBinId": "34",
+      "capacity": "10",
+      "generateSerialCount": 2,
+      "newProduct": {
+        "name": "条码打印机",
+        "decimalPlaces": 0,
+        "serialTracking": true,
+        "newUnitName": "台"
+      }
+    },
+    {
+      "productId": "15",
+      "toBinId": "35",
+      "serialNumbers": ["SN-000101"]
+    }
+  ],
+  "source": "供应商 A"
+}

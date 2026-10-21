@@ -1,0 +1,11 @@
+{
+  "user": {
+    "id": "7",
+    "username": "mchen",
+    "displayName": "Morgan Chen",
+    "roles": ["warehouseSupervisor", "receivingClerk"],
+    "currentRole": "receivingClerk",
+    "permissions": ["Inventory.Receive"]
+  },
+  "expiresAt": "2026-10-20T02:00:00Z"
+}

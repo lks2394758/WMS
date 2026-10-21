@@ -1,0 +1,15 @@
+{
+  "name": "wms-test-ui",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Zero-dependency WMS test UI with a same-origin proxy to the WMS API",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.mjs",
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

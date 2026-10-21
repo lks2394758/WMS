@@ -1,0 +1,11 @@
+{
+  "name": "铜线 2.5mm²",
+  "unitId": "3",
+  "decimalPlaces": 2,
+  "serialTracking": false,
+  "categoryIds": ["2"],
+  "version": 4,
+  "sku": "SKU-000012",
+  "barcode": "BC-000012",
+  "removeImage": true
+}

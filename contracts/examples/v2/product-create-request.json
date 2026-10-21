@@ -1,0 +1,11 @@
+{
+  "name": "手持扫描枪",
+  "unitId": "4",
+  "decimalPlaces": 0,
+  "serialTracking": true,
+  "categoryIds": ["5"],
+  "sku": "SCN-200",
+  "barcode": "6901234567892",
+  "imageBase64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
+  "imageContentType": "image/png"
+}

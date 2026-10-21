@@ -15,12 +15,13 @@ public static class ProblemCodes
     public const string InsufficientStock = "INSUFFICIENT_STOCK";
     public const string ConcurrencyConflict = "CONCURRENCY_CONFLICT";
     public const string IdempotencyConflict = "IDEMPOTENCY_CONFLICT";
+    public const string RateLimited = "RATE_LIMITED";
     public const string InternalError = "INTERNAL_ERROR";
 
     public static IReadOnlyList<string> All { get; } =
     [
         ValidationFailed, Unauthenticated, Forbidden, NotFound, ProductNotFound, LocationNotFound,
         ProductInactive, LocationInactive, BarcodeAmbiguous, InsufficientStock, ConcurrencyConflict,
-        IdempotencyConflict, InternalError,
+        IdempotencyConflict, RateLimited, InternalError,
     ];
 }

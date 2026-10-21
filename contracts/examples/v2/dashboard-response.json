@@ -1,0 +1,47 @@
+{
+  "skuCount": 2,
+  "openAlertCount": 1,
+  "activeCountCount": 1,
+  "unresolvedInvestigationCount": 1,
+  "scope": "all",
+  "recentActivity": [
+    {
+      "id": "230",
+      "occurredAt": "2026-10-19T20:20:00Z",
+      "type": "countResolve",
+      "description": "CT-000006 调查结案：关联调整 TX-000057",
+      "success": true,
+      "subjects": [
+        { "type": "countTask", "id": "6", "label": "CT-000006" },
+        { "type": "countResult", "id": "9" },
+        { "type": "transaction", "id": "57", "label": "TX-000057" }
+      ],
+      "actorId": "7",
+      "actorName": "Morgan Chen",
+      "actorRole": "warehouseSupervisor"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "22",
+      "type": "overCapacity",
+      "status": "open",
+      "binId": "33",
+      "binCode": "A-R1-02-05",
+      "productId": "12",
+      "productName": "铜线 2.5mm",
+      "message": "A-R1-02-05 占用 105%，超过容量",
+      "createdAt": "2026-10-19T19:40:00Z",
+      "trigger": {
+        "quantity": "210",
+        "capacity": "200",
+        "occupancyPercent": "105",
+        "lowThreshold": "10",
+        "highThreshold": "80",
+        "unitName": "米",
+        "decimalPlaces": 2,
+        "sku": "SKU-000012"
+      }
+    }
+  ]
+}

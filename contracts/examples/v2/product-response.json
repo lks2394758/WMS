@@ -1,0 +1,40 @@
+{
+  "id": "12",
+  "name": "铜线 2.5mm",
+  "sku": "SKU-000012",
+  "barcode": "BC-000012",
+  "unitId": "3",
+  "unitName": "米",
+  "decimalPlaces": 2,
+  "serialTracking": false,
+  "categoryIds": [],
+  "totalQuantity": "182.75",
+  "hasImage": true,
+  "historicalSkus": ["CW-25"],
+  "historicalBarcodes": [],
+  "bins": [
+    {
+      "binId": "31",
+      "binCode": "A-R1-02-03",
+      "quantity": "150",
+      "capacityStatus": "normal",
+      "capacity": "200",
+      "occupancyPercent": "75"
+    },
+    {
+      "binId": "32",
+      "binCode": "A-R1-02-04",
+      "quantity": "32.75",
+      "capacityStatus": "low",
+      "capacity": "200",
+      "occupancyPercent": "16.38",
+      "frozenCountTaskId": "4"
+    }
+  ],
+  "hasOpenCountOrInvestigation": true,
+  "createdAt": "2026-10-19T17:00:00Z",
+  "updatedAt": "2026-10-19T18:30:00Z",
+  "version": 4,
+  "imageBase64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
+  "imageContentType": "image/png"
+}

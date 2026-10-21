@@ -1,0 +1,7 @@
+{
+  "lines": [
+    { "productId": "15", "toBinId": "35", "quantity": "-1", "serialNumbers": ["SN-000104"] }
+  ],
+  "reason": "核查确认 SN-000104 已报废",
+  "countResultId": "9"
+}

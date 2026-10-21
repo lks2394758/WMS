@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "id": "86",
+      "serialNumber": "SN-000102",
+      "productId": "15",
+      "productName": "手持扫描枪",
+      "sku": "SCN-200",
+      "inStock": true,
+      "historicalSerialNumbers": ["SN-00102"],
+      "version": 2,
+      "binId": "35",
+      "binCode": "A-R1-03-01",
+      "matchedHistoricalSerialNumber": "SN-00102"
+    },
+    {
+      "id": "88",
+      "serialNumber": "SN-000104",
+      "productId": "15",
+      "productName": "手持扫描枪",
+      "sku": "SCN-200",
+      "inStock": false,
+      "historicalSerialNumbers": [],
+      "version": 1
+    }
+  ]
+}

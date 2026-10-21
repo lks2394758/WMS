@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <!-- Development secrets (Jwt:SigningKey, DevelopmentSeed:Password) live in user-secrets, never in this repository. -->
+    <UserSecretsId>wms-backend-api-7d3f2a9e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Wms.Application\Wms.Application.csproj" />
     <ProjectReference Include="..\Wms.Contracts\Wms.Contracts.csproj" />
+    <!-- Registration only (PersistenceSetup); controllers and use cases see the ports, never the provider. -->
+    <ProjectReference Include="..\Wms.Persistence.Sqlite\Wms.Persistence.Sqlite.csproj" />
   </ItemGroup>
 
 </Project>
